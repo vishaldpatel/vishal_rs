@@ -1,0 +1,20 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:title]} type="text" label="Title" />
+  <.input field={f[:body]} type="textarea" label="Body" />
+  <.input field={f[:published]} type="checkbox" label="Published" />
+  <:actions>
+    <.button>Save Post</.button>
+  </:actions>
+</.simple_form>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
+<script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
+<script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
+
+<script>
+  var editor = new Editor({ toolbar: [] });
+  editor.render();
+</script>
