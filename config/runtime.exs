@@ -66,14 +66,13 @@ if config_env() == :prod do
   # To get SSL working, you will need to add the `https` key
   # to your endpoint configuration:
   #
-       config :vishal_rs, VishalRsWeb.Endpoint,
-         https: [
-           ...,
-           port: 443,
-           cipher_suite: :strong,
-           keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
-           certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
-         ]
+  config :vishal_rs, VishalRsWeb.Endpoint,
+    https: [
+      port: 443,
+      cipher_suite: :strong,
+      keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
+      certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
+    ]
   #
   # The `cipher_suite` is set to `:strong` to support only the
   # latest and more secure SSL ciphers. This means old browsers
@@ -88,8 +87,8 @@ if config_env() == :prod do
   # We also recommend setting `force_ssl` in your config/prod.exs,
   # ensuring no data is ever sent via http, always redirecting to https:
   #
-       config :vishal_rs, VishalRsWeb.Endpoint,
-         force_ssl: [hsts: true]
+  config :vishal_rs, VishalRsWeb.Endpoint,
+    force_ssl: [hsts: true]
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
 
