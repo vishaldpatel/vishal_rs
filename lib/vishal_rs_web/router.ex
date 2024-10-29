@@ -66,7 +66,7 @@ defmodule VishalRsWeb.Router do
   scope "/", VishalRsWeb do
     pipe_through [:browser, :require_authenticated_user]
 
-    resources "/posts", PostController
+    resources "/posts", PostController, param: "slug"
 
     live_session :require_authenticated_user,
       on_mount: [{VishalRsWeb.UserAuth, :ensure_authenticated}] do

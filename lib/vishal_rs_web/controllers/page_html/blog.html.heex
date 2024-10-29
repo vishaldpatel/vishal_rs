@@ -77,7 +77,7 @@
   <h2 class="text-3xl font-bold mt-8 text-zinc-100">Essays</h2>
   <p>
     <%= for post <- @posts do %>
-      <span>•</span> <a href={~p"/essay/#{post.id}"}><%= post.title %></a>
+      <.link navigate={~p"/essay/#{post}"}><%= post.title %></.link>
       <br />
     <% end %>
   </p>
